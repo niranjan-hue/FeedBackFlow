@@ -56,7 +56,7 @@ export const AnalyticsDashboard = () => {
         <div className="space-y-8">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                    <Button variant="ghost" onClick={() => navigate('/dashboard')} className="gap-2">
+                    <Button variant="ghost" onClick={() => navigate('/admin/dashboard')} className="gap-2">
                         <ArrowLeft size={20} /> Back
                     </Button>
                     <div>

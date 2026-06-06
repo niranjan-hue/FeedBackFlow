@@ -14,9 +14,9 @@ export const Register = () => {
 
     useEffect(() => {
         if (user) {
-            navigate('/dashboard');
+            navigate('/admin/dashboard', { replace: true });
         }
-    }, [user, navigate]);
+    }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const getErrorMessage = (err) => {
         switch (err.code) {
@@ -33,7 +33,7 @@ export const Register = () => {
         setError('');
         try {
             await signup(email, password);
-            navigate('/dashboard');
+            navigate('/admin/dashboard');
         } catch (err) {
             setError(getErrorMessage(err));
         }
@@ -42,7 +42,7 @@ export const Register = () => {
     const handleGoogleLogin = async () => {
         try {
             await loginWithGoogle();
-            navigate('/dashboard');
+            navigate('/admin/dashboard');
         } catch (err) {
             setError(getErrorMessage(err));
         }

@@ -97,7 +97,7 @@ export const FormBuilder = () => {
             } else {
                 await addForm(formData, user.uid);
             }
-            navigate('/dashboard');
+            navigate('/admin/dashboard');
         } catch (error) {
             alert('Failed to save form. Please try again.');
         }
@@ -106,7 +106,7 @@ export const FormBuilder = () => {
     return (
         <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex items-center justify-between">
-                <Button variant="ghost" onClick={() => navigate('/dashboard')} className="gap-2">
+                <Button variant="ghost" onClick={() => navigate('/admin/dashboard')} className="gap-2">
                     <ArrowLeft size={20} /> Back
                 </Button>
                 <h1 className="text-2xl font-bold text-gray-900">{formId ? 'Edit Form' : 'Create New Form'}</h1>

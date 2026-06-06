@@ -41,7 +41,7 @@ export const AdminDashboard = () => {
                     <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
                     <p className="text-gray-500 mt-1">Manage your feedback forms</p>
                 </div>
-                <Link to="/create">
+                <Link to="/admin/create">
                     <Button className="flex items-center gap-2 px-6 py-3">
                         <PlusCircle size={20} />
                         Create New Form
@@ -56,7 +56,7 @@ export const AdminDashboard = () => {
                     </div>
                     <h3 className="text-xl font-medium text-gray-900">No forms yet</h3>
                     <p className="text-gray-500 mt-2 mb-6 max-w-sm">Create your first feedback form to start collecting responses from users.</p>
-                    <Link to="/create">
+                    <Link to="/admin/create">
                         <Button variant="outline" className="flex items-center gap-2">
                             <PlusCircle size={18} />
                             Create Form
@@ -113,7 +113,7 @@ export const AdminDashboard = () => {
                                     <div className="flex gap-2">
                                         <Button
                                             variant="ghost"
-                                            onClick={() => navigate(`/analytics/${form.id}`)}
+                                            onClick={() => navigate(`/admin/analytics/${form.id}`)}
                                             className="text-gray-600 hover:text-indigo-600 text-sm flex items-center gap-2 px-3"
                                         >
                                             <BarChart2 size={16} />
@@ -121,7 +121,7 @@ export const AdminDashboard = () => {
                                         </Button>
                                         <Button
                                             variant="ghost"
-                                            onClick={() => navigate(`/edit/${form.id}`)}
+                                            onClick={() => navigate(`/admin/edit/${form.id}`)}
                                             className="text-gray-600 hover:text-indigo-600 text-sm flex items-center gap-2 px-3"
                                         >
                                             <FileText size={16} />

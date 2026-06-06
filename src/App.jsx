@@ -12,30 +12,30 @@ import { AnalyticsDashboard } from '../src/pages/AnalyticsDashboard';
 
 function App() {
   return (
-    <AuthProvider>
-      <FeedbackProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
+        <FeedbackProvider>
           <Routes>
             {/* Public Routes */}
             <Route path="/form/:formId" element={<FeedbackForm />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/admin/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
             {/* Protected Admin Routes */}
             <Route element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
-              <Route path="/dashboard" element={<AdminDashboard />} />
-              <Route path="/create" element={<FormBuilder />} />
-              <Route path="/edit/:formId" element={<FormBuilder />} />
-              <Route path="/analytics/:formId" element={<AnalyticsDashboard />} />
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/create" element={<FormBuilder />} />
+              <Route path="/admin/edit/:formId" element={<FormBuilder />} />
+              <Route path="/admin/analytics/:formId" element={<AnalyticsDashboard />} />
             </Route>
 
             {/* Redirect root to admin dashboard (or login) */}
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="*" element={<Navigate to="/login" replace />} />
+            <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+            <Route path="*" element={<Navigate to="/admin/login" replace />} />
           </Routes>
-        </BrowserRouter>
-      </FeedbackProvider>
-    </AuthProvider>
+        </FeedbackProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
